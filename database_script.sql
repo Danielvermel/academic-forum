@@ -123,7 +123,7 @@ SELECT
         ON articles."articleInfoId" = essentialInfo."infoId";
 
 -- 2.4 Articles View (with Comments)
-CREATE VIEW academic_forum."articlesComemntsView" AS
+CREATE VIEW academic_forum."articlesCommentsView" AS
 SELECT 
       "articleId", 
       title, 

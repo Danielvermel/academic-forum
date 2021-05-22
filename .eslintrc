@@ -39,8 +39,14 @@
     "_": true,
 
     // Models:
-    "User": true
-    
+    "Articles": true,
+    "ArticlesView": true,
+    "ArticlesCommentsView": true,
+    "Books": true,
+    "BooksView": true,
+    "BooksCommentsView": true,
+    "Comments": true,
+    "EssentialInfo": true
     // …and any others.
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   },

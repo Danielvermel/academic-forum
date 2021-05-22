@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-    id: {type: 'number', columnName: 'articleid', required: true},
+    id: {type: 'number', columnName: 'articleId', required: true},
     title: {type: 'string', required: true},
     author: {type:'string', required: true},
     publicationDate: {type:'number', required: true},
