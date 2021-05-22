@@ -3,7 +3,7 @@
 ## Database
 
 - Using `Postgresql`;
-- Script to create db in `db_script.sql`;
+- Script to create/populate db in `db_script.sql`;
 
 ## Database Design
 
