@@ -16,7 +16,7 @@ module.exports = {
   },
 
 
-  fn: async function (exits) {
+  fn: async function (inputs, exits) {
 
     let articles = await ArticlesView.find();
 

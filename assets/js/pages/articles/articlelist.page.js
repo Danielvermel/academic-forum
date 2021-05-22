@@ -10,7 +10,7 @@ parasails.registerPage('articlelist', {
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
   beforeMount: function() {
-    //…
+    _.extend(this, SAILS_LOCALS);
   },
   mounted: async function() {
     //…

@@ -5,7 +5,7 @@
 } %><!DOCTYPE html>
 <html>
   <head>
-    <title>NEW_APP_NAME</title>
+    <title>Academic Forum</title>
 
     <% /* Viewport tag for sensible mobile support */ %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -43,68 +43,19 @@
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
   </head>
-  <body>
+  <body class="bg-light">
     <div purpose="page-wrap">
-      <header class="navbar navbar-expand-sm navbar-dark bg-dark flex-column flex-md-row justify-content-between" purpose="page-header">
-        <a style="cursor: pointer;" class="navbar-brand mr-0" href="/"><img style="height: 20px;" class="logo" alt="NEW_APP_NAME logo" src="/images/logo.png"/></a>
-        <div class="navbar-nav flex-row">
-          <!-- LOGGED-IN NAVIGATION -->
-          <% if(me) { %>
-          <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact">Help</a>
-          <!-- Only in desktop nav -->
-          <div class="nav-item dropdown d-none d-sm-block">
-            <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
-            <div style="left: auto; right: 0;" class="dropdown-menu" aria-labelledby="header-account-menu-link">
-              <a class="dropdown-item" href="/account">Settings</a>
-              <a class="dropdown-item" href="/logout">Sign out</a>
-            </div>
+      <header >
+        <nav class="navbar navbar-dark bg-info text-white justify-content-between">
+          <a style="cursor: pointer;" class="navbar-brand mr-0" href="/">Academic Forum</a>
+          <div class="navbar-nav flex-row">
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/books">Books</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/articles">Articles</a>
           </div>
-          <!-- Only in mobile nav -->
-          <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/account">Account Settings</a>
-          <a class="nav-item nav-link ml-2 mr-2 d-block d-sm-none" href="/logout">Sign out</a>
-          <% } else { %>
-          <!-- LOGGED-OUT NAVIGATION -->
-          <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/faq">FAQ</a>
-          <a class="nav-item nav-link ml-2 ml-md-0 mr-2" href="/login">Log in</a>
-          <!-- Only in desktop nav -->
-          <div class="form-inline d-none ml-2 d-md-block" >
-            <a class="btn btn-outline-info" href="/signup">Sign up</a>
-          </div>
-          <!-- Only in mobile nav -->
-          <a class="nav-item nav-link text-info ml-2 d-block d-md-none" href="/signup">Sign up</a>
-          <% } %>
-        </div>
+        </nav>
       </header>
 
-      <!-- Alert if email has not been confirmed -->
-      <% if(me&&me.emailChangeCandidate) { %>
-      <div class="container-fluid">
-        <div class="alert alert-secondary mt-2 small" role="alert">
-        Your updated email address needs verification. Until you click the link sent to <strong><%= me.emailChangeCandidate %></strong>, you'll still need to sign in as <strong><%= me.emailAddress %></strong>.
-        </div>
-      </div>
-      <% } else if(me&&me.emailStatus === 'unconfirmed') { %>
-      <div class="container-fluid">
-        <div class="alert alert-secondary mt-2 small" role="alert">
-        Your email address still needs verification. Your account access may be limited until you click the link sent to <strong><%= me.emailChangeCandidate ? me.emailChangeCandidate : me.emailAddress%></strong>.
-        </div>
-      </div>
-      <% } %>
-
       <%- body %>
-
-      <footer class="navbar navbar-light justify-content-between flex-row-reverse" purpose="page-footer">
-        <div class="nav" purpose="footer-nav">
-          <small class="nav-item d-inline-block"><a class="nav-link text-info px-1 px-sm-3" href="/contact">Contact<span class="d-none d-sm-inline"> us</span></a></small>
-          <small class="nav-item d-inline-block"><a class="nav-link text-info px-1 px-sm-3" href="/legal/terms">Terms<span class="d-none d-sm-inline"> of use</span></a></small>
-          <small class="nav-item d-inline-block"><a class="nav-link text-info px-1 px-sm-3" href="/legal/privacy">Privacy<span class="d-none d-sm-inline"> policy</span></a></small>
-          <% if(me) { %>
-          <small class="nav-item d-inline-block"><a class="nav-link text-info px-1 px-sm-3" href="/logout">Sign out</a></small>
-          <% } %>
-        </div>
-        <small purpose="footer-copy">Copyright &copy; <%= sails.config.custom.platformCopyrightYear %> <a target="_blank" href="NEW_APP_COMPANY_ABOUT_HREF">NEW_APP_COMPANY_NAME</a>. <br class="d-block d-sm-none"/>All rights reserved.</small>
-      </footer>
-    </div>
 
 
     <% /*
@@ -138,6 +89,7 @@
     <script src="/dependencies/moment.js"></script>
     <script src="/dependencies/parasails.js"></script>
     <script src="/js/cloud.setup.js"></script>
+    <script src="/js/components/card.component.js"></script>
     <script src="/js/pages/articles/article.page.js"></script>
     <script src="/js/pages/articles/articlelist.page.js"></script>
     <script src="/js/pages/books/book.page.js"></script>

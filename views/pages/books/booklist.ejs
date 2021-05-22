@@ -1,9 +1,17 @@
 <div id="booklist" v-cloak>
 
-  <h1>TODO: Implement this page.</h1>
-  <p>(See also <em>assets/styles/pages/books/booklist.less</em>, <em>assets/js/pages/books/booklist.page.js</em>, and <em>api/controllers/books/view-booklist.js</em>.)</p>
-  <ul>
-    <li v-for="data in books">{{data.title}}</li>
-  </ul>
+  <section class="wrapper">
+    <div class="container">
+      <header class="mt-5">
+        <h2>List of Books</h2>
+      </header>
+
+        <div class="row">
+            <card v-for="data in books" :data="data"></card>
+        </div>
+    </div>
+        
+
+
 </div>
 <%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
