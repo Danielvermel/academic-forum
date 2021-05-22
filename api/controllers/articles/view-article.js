@@ -16,11 +16,15 @@ module.exports = {
   },
 
 
-  fn: async function () {
+  fn: async function (inputs, exits) {
+
+    let id = this.req.param('id');
+    let article = await ArticlesCommentsView.find().where({ 'id' : id });
 
     // Respond with view.
-    return {};
-
+    return exits.success({
+      article
+    });
   }
 
 

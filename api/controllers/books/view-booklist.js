@@ -16,10 +16,13 @@ module.exports = {
   },
 
 
-  fn: async function () {
+  fn: async function (inputs, exits) {
 
+    let books = await BooksView.find();
     // Respond with view.
-    return {};
+    return exits.success({
+      books
+    });
 
   }
 

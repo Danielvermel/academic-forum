@@ -16,11 +16,14 @@ module.exports = {
   },
 
 
-  fn: async function () {
+  fn: async function (exits) {
+
+    let articles = await ArticlesView.find();
 
     // Respond with view.
-    return {};
-
+    return exits.success({
+      articles
+    });
   }
 
 
