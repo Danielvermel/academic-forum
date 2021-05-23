@@ -11,12 +11,12 @@ module.exports = {
     id: {type: 'number', columnName: 'bookId', required: true},
     title: {type: 'string', required: true},
     author: {type:'string', required: true},
-    publicationDate: {type:'number', required: true},
+    publicationDate: {type:'string', required: true},
     urlCoverPhoto: {type:'string', required: true},
     publisher: {type: 'string', required: true},
     content: {type: 'string', required: true},
     creator: {type: 'string', required: true},
-    creationDate: {type: 'number', required: true}
+    creationDate: {type: 'string', required: true}
   },
   tableName: 'booksCommentsView'
 };

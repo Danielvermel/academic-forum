@@ -22,7 +22,7 @@ CREATE TABLE academic_forum.essentialInfo
     "infoId" int NOT NULL,
     title character varying(300) NOT NULL,
     author character varying(300) NOT NULL,
-    "publicationDate" date NOT NULL,
+    "publicationDate" character varying(25) NOT NULL,
     "urlCoverPhoto" character varying(300) NOT NULL,
     PRIMARY KEY ("infoId")
 );
@@ -34,7 +34,7 @@ CREATE TABLE academic_forum.comments
     "commentId" int NOT NULL,
     content character varying(1000) NOT NULL,
     creator character varying(100) NOT NULL,
-    "creationDate" date NOT NULL,
+    "creationDate" character varying(25) NOT NULL,
     "commentInfoId" int NOT NULL,
     PRIMARY KEY ("commentId"),
     CONSTRAINT "infoId" FOREIGN KEY ("commentInfoId")
