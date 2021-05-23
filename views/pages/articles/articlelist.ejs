@@ -7,9 +7,10 @@
       </header>
 
         <div class="row">
-            <card v-for="data in articles" :data="data"></card>
+            <card v-for="data in articles" :url="'articles'" :data="data"></card>
         </div>
     </div>
+  </section>
       
 </div>
 <%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>

@@ -1,0 +1,73 @@
+figure.card {
+
+    background-color: @academic-forum-color;
+    color:@accent-white;
+    cursor: pointer; 
+    
+    &:hover {
+        .animation-scale(1.1);
+        box-shadow: 3px 3px 8px @shadow-color;
+
+        .card-title{
+            opacity: 1;
+
+            &::after{
+                .animation-tranform(0,0,0);
+            }
+        }
+
+        .card-button{
+            opacity: 1;
+        }
+
+        img {
+            opacity: 0.2;
+            .animation-tranform(0,0,0);
+        }
+    }
+    img {
+        .animation-transition(opacity, 0.35s);
+        .animation-tranform(-10px,0,0);
+        width: -webkit-calc(100% + 5px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+.card-button{
+    opacity: 0;
+}
+
+.card-title {
+    .animation-transition(opacity, 0.35s);
+    position: relative;
+	overflow: hidden;
+	padding-bottom: 20px;
+	opacity: 0;
+	&::after{
+        .animation-transition(opacity, 0.35s);
+        .animation-tranform(100%,0,0);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background:@accent-white;
+        content: '';
+    }
+}
+
+figure {
+    position: relative;
+    overflow: hidden;
+   
+    figcaption {
+        padding: 20px 30px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+    }
+    
+}

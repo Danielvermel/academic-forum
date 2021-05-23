@@ -16,9 +16,16 @@
 
 parasails.registerComponent('card', {
 
-  props: [
-    'data'
-  ],
+  props: {
+    data: {
+      type: Object,
+      required: true
+    },
+    url: {
+      type: String,
+      required: false
+    }
+  },
 
   data: function (){
     return {
@@ -27,11 +34,17 @@ parasails.registerComponent('card', {
   },
 
   template: `
-    <article class="mb-3 col-12 col-md-6 col-lg-4 col-xl-3 card-container rounded" id="data.id">
-      <a :href="'/books/' + data.id">
-          <div class="card card-size">
+    <article class="my-4 col-12 col-md-6 col-lg-4 col-xl-3 card-container rounded" :id="data.id">
+      <a :href="'/'+url+'/' + data.id">
+          <figure class="card card-size m-0">
               <img class="card-img-top" :src="data.urlCoverPhoto" :alt="data.title">
-          </div>
+              <figcaption>
+              <h4 class="card-title">{{data.title.slice(0, 60)}}<span v-if="data.title.length > 60">...</span></h4>
+              
+              <button type="button" class="btn btn-outline-light card-button">Get info</button>       
+              
+          </figcaption>
+          </figure>
       </a>
   </article>
   `,
