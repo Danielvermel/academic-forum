@@ -1,7 +1,20 @@
 <div id="article" v-cloak>
 
-  <h1>TODO: Implement this page.</h1>
-  <p>(See also <em>assets/styles/pages/articles/article.less</em>, <em>assets/js/pages/articles/article.page.js</em>, and <em>api/controllers/articles/view-article.js</em>.)</p>
+  <section class="wrapper">
+    <div class="container">
+       
+        <ol class="breadcrumb bg-light px-0 mt-2">
+          <li class="breadcrumb-item"><a href="/articles">Articles</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{article[0].title.slice(0, 20)}}<span v-if="article[0].title.length > 20">...</span></li>
+        </ol>
+      
+        <div class="row">
+          <record class="col-12" :data="article"></record>
+          <comments class="col-12 mt-4" :data="article"></comments>
+        </div>
+        
+    </div>
+  </section>
 
 </div>
 <%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
