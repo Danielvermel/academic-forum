@@ -2,8 +2,15 @@
 
   <section class="wrapper">
     <div class="container">
-      <header class="mt-5">
-        <h2>List of Articles</h2>
+      <header class="mt-5 d-flex justify-content-between">
+        <h3>List of Articles</h3>
+        <select class="custom-select" v-model="sortedOption" width="auto" @change="sortedList(sortedOption)">
+          <option value="default" disabled>Sort by:</option>
+          <option value="dateUp"> Date (Asc)</option>
+          <option value="dateDown"> Date (Desc)</option>
+          <option value="nameUp">Name (Asc)</option>
+          <option value="nameDown">Name (Desc)</option>
+        </select>
       </header>
 
         <div class="row">
