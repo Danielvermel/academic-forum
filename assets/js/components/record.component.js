@@ -50,7 +50,9 @@ parasails.registerComponent('record', {
         <h4>Title</h4>
         <p>{{data[0].title}}</p>
         
-        <h4>Author(s)</h4>
+        <h4 v-if="data[0].author.match(/\,/g) != null && data[0].author.match(/\,/g).length >= 1">Authors</h4>
+        <h4 v-else>Author</h4>
+        
         <p>{{data[0].author}}</p>
         
         <h4>Publication Date</h4>

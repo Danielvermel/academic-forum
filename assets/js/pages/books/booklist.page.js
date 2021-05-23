@@ -1,5 +1,5 @@
 parasails.registerPage('booklist', {
-  
+
   data: {
     sortedOption: 'default'
   },

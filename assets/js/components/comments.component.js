@@ -29,16 +29,20 @@ parasails.registerComponent('comments', {
     };
   },
 
+  beforeMount: function() {
+    this.data.sort((a, b) => (a.creationDate > b.creationDate) ? 1 : -1);
+  },
+
   template: `
     <section>
       <h3>Comments</h3>
         <ul class="list-group list-group-flush comments">
           <li class="list-group-item" v-for="comments in data">
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between mb-2">
             <span><strong>{{comments.creator}}</strong></span>
             <span>{{comments.creationDate}}</span>
           </div>
-            <span class="mt-2">{{comments.content}}</span>
+            <span>{{comments.content}}</span>
           </li>
         </ul>
     </section>
