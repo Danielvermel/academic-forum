@@ -34,7 +34,7 @@ parasails.registerComponent('comments', {
   },
 
   template: `
-    <section class="mt-4">
+    <section>
       <h4>Comments</h4>
         <ul class="list-group list-group-flush mt-3">
           <li class="list-group-item" v-for="comments in data">

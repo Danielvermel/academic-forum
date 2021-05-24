@@ -31,16 +31,16 @@ parasails.registerComponent('record', {
   template: `
     <section class="row">
     
-      <div  class="col-3">
+      <div  class="col-sm-12 col-md-3 mb-4">
         <img class="rounded mx-auto record-img float-left" :src="data[0].urlCoverPhoto"/>
       </div>
 
-      <div class="col-8 offset-1">
+      <div class="col-sm-12 col-md-8 offset-md-1">
         <h4 class="mb-5">{{data[0].title}}</h4>
           
           <div class="row mb-5">
             
-            <div class="col-4">
+            <div class="col-sm-12 col-md-4">
               <h5 v-if="data[0].author.match(/\,/g) != null && data[0].author.match(/\,/g).length >= 1">Authors</h5>
               <h5 v-else>Author</h5>
               
@@ -54,7 +54,7 @@ parasails.registerComponent('record', {
                 <p>{{data[0].publisher}}</p>
               </div>
 
-              <div  v-if="data[0].journalPublished">
+              <div v-if="data[0].journalPublished">
                 <h5> Issue Published</h5>
                 <p>{{data[0].journalPublished}}</p>
               </div>
@@ -65,7 +65,7 @@ parasails.registerComponent('record', {
               </div>    
             </div>  
 
-            <div class="col-8">
+            <div class="col-sm-12 col-md-8">
 
               <h5>Description</h5>
               <p class="text-justify">
