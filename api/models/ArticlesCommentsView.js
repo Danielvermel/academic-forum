@@ -11,13 +11,14 @@ module.exports = {
     id: {type: 'number', columnName: 'articleId', required: true},
     title: {type: 'string', required: true},
     author: {type:'string', required: true},
-    publicationDate: {type:'string', required: true},
+    description: {type:'string', required: true},
+    publicationDate: {type:'ref', required: true},
     urlCoverPhoto: {type:'string', required: true},
     journalIssueNumber: {type: 'number', required: true},
     journalPublished: {type: 'string', required: true},
     content: {type: 'string', required: true},
     creator: {type: 'string', required: true},
-    creationDate: {type: 'string', required: true}
+    creationDate: {type: 'ref', required: true}
   },
   tableName: 'articlesCommentsView'
 

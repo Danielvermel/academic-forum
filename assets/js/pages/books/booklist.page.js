@@ -14,6 +14,7 @@ parasails.registerPage('booklist', {
         this.books.sort((a, b) => (a.publicationDate > b.publicationDate) ? 1 : -1);
       }else if (option === 'dateDown'){
         this.books.sort((a, b) => (a.publicationDate < b.publicationDate) ? 1 : -1);
+        console.log(JSON.stringify(this.books))
       }
     }
   }

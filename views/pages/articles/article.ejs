@@ -5,13 +5,11 @@
        
         <ol class="breadcrumb bg-light px-0 mt-2">
           <li class="breadcrumb-item"><a href="/articles">Articles</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{{article[0].title.slice(0, 20)}}<span v-if="article[0].title.length > 20">...</span></li>
+          <li class="breadcrumb-item active" aria-current="page">{{article[0].title.slice(0, 31)}}<span v-if="article[0].title.length > 31">...</span></li>
         </ol>
       
-        <div class="row">
-          <record class="col-12" :data="article"></record>
-          <comments class="col-12 mt-4" :data="article"></comments>
-        </div>
+        <record :data="article"></record>
+        <comments :data="article"></comments>
         
     </div>
   </section>

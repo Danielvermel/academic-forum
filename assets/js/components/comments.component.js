@@ -34,13 +34,13 @@ parasails.registerComponent('comments', {
   },
 
   template: `
-    <section>
-      <h3>Comments</h3>
-        <ul class="list-group list-group-flush comments">
+    <section class="mt-4">
+      <h4>Comments</h4>
+        <ul class="list-group list-group-flush mt-3">
           <li class="list-group-item" v-for="comments in data">
           <div class="d-flex justify-content-between mb-2">
             <span><strong>{{comments.creator}}</strong></span>
-            <span>{{comments.creationDate}}</span>
+            <span>{{comments.creationDate.slice(0,10)}}</span>
           </div>
             <span>{{comments.content}}</span>
           </li>

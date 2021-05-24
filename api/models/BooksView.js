@@ -11,7 +11,8 @@ module.exports = {
     id: {type: 'number', columnName: 'bookId', required: true},
     title: {type: 'string', required: true},
     author: {type:'string', required: true},
-    publicationDate: {type:'string', required: true},
+    description: {type:'string', required: true},
+    publicationDate: {type:'ref', required: true},
     urlCoverPhoto: {type:'string', required: true},
     publisher: {type: 'string', required: true}
   },
