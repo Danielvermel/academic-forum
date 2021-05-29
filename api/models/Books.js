@@ -1,5 +1,5 @@
 /**
- * BooksView.js
+ * BooksCommentsView.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -14,8 +14,11 @@ module.exports = {
     description: {type:'string', required: true},
     publicationDate: {type:'ref', required: true},
     urlCoverPhoto: {type:'string', required: true},
-    publisher: {type: 'string', required: true}
+    publisher: {type: 'string', required: true},
+    comments: {
+      collection: 'Comments',
+      via: 'bookId'
+    }
   },
-  tableName: 'booksView'
+  tableName: 'books'
 };
-

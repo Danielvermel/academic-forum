@@ -19,7 +19,8 @@ module.exports = {
   fn: async function (inputs, exits) {
 
     let id = this.req.param('id');
-    let article = await ArticlesCommentsView.find().where({ 'id' : id });
+    // let article = await ArticlesCommentsView.find().where({ 'id' : id });
+    let article = await Articles.find().populate('comments').where({ 'id' : id });
 
     // Respond with view.
     return exits.success({

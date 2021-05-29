@@ -19,7 +19,7 @@ module.exports = {
   fn: async function (inputs, exits) {
 
     let id = this.req.param('id');
-    let book = await BooksCommentsView.find().where({ 'id' : id });
+    let book = await Books.find().populate('comments').where({ 'id' : id });
 
     // Respond with view.
     return exits.success({

@@ -30,7 +30,7 @@ This is a small prototype project for a website where academics can discuss book
 ## Database Design
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/32749108/119404954-72ce1b80-bcd8-11eb-8de2-d75d2a7660a0.jpg" height="75%" width="75%" />
+  <img src="https://user-images.githubusercontent.com/32749108/120075640-0d907680-c09a-11eb-9913-206261d7074a.jpg" height="100%" width="100%" />
 </p>
 
 <a id="project-preview"></a>
