@@ -37,12 +37,22 @@ parasails.registerComponent('comments', {
     <section>
       <h4>Comments</h4>
         <ul class="list-group list-group-flush mt-3">
-          <li class="list-group-item" v-for="comments in data">
+          <li class="list-group-item" v-for="comment in data">
           <div class="d-flex justify-content-between mb-2">
-            <span><strong>{{comments.creator}}</strong></span>
-            <span>{{comments.creationDate.slice(0,10)}}</span>
+            <span><strong>{{comment.creator}}</strong></span>
+            <div class="d-flex jsutify-content-end">
+              <span>
+                {{comment.creationDate.slice(0,10)}} 
+              </span>
+              <form :action="'/comment/delete/' + comment.id" method="post" class="ml-2">
+                <button type="submit" class="bg-white border-0">
+                  <i class="texr-dark fa fa-times"></i>
+                </button>
+              </form>
+            </div>
+  
           </div>
-            <span>{{comments.content}}</span>
+            <span>{{comment.content}}</span>
           </li>
         </ul>
     </section>
